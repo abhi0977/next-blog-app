@@ -21,9 +21,10 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - ls -a
       # Post-build commands like notifications or post-build tests can be added here
 
-artifacts:
-  files:
-    - '**/*' # Specifies the files to store as build output
-  base-directory: 'build' # Specifies the directory where the build output is stored, replace 'build' with your build directory
+# artifacts:
+#   files:
+#     - '**/*' # Specifies the files to store as build output
+#   base-directory: 'build' # Specifies the directory where the build output is stored, replace 'build' with your build directory
