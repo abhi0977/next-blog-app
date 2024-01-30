@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16 # Specify the Node.js version you want to use
+    commands:
+      - echo Installing Node.js dependencies...
+      - npm install # Install dependencies defined in package.json
+      
+  pre_build:
+    commands:
+      - echo Pre-build phase...
+      # You can add pre-build commands here, like linting or tests
+      
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build # This command should match the script in your package.json that builds your project
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      # Post-build commands like notifications or post-build tests can be added here
+
+artifacts:
+  files:
+    - '**/*' # Specifies the files to store as build output
+  base-directory: 'build' # Specifies the directory where the build output is stored, replace 'build' with your build directory
